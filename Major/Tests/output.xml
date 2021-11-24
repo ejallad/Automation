@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.1 (Python 3.9.7 on win32)" generated="20211115 15:44:49.454" rpa="false" schemaversion="2">
+<suite id="s1" name="Sanity" source="C:\Users\SevenPeaks\Desktop\Automation\Major\Tests\Sanity.robot">
+<kw name="Initiate App" library="util" type="SETUP">
+<kw name="Start App" library="common">
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${NEW_INSTALL}' == 'Y'</arg>
+<arg>AL.open application</arg>
+<arg>${HOST}</arg>
+<arg>automationName=${AUTOMATION_NAME}</arg>
+<arg>app=${APP}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY}</arg>
+<arg>udid=${DEVICE_UDID}</arg>
+<arg>locationServicesEnabled=True</arg>
+<arg>locationServicesAuthorized=True</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20211115 15:44:52.516" endtime="20211115 15:44:52.516"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${NEW_INSTALL}' == 'N'</arg>
+<arg>AL.open application</arg>
+<arg>${HOST}</arg>
+<arg>automationName=${AUTOMATION_NAME}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY}</arg>
+<arg>udid=${DEVICE_UDID}</arg>
+<arg>locationServicesEnabled=True</arg>
+<arg>locationServicesAuthorized=True</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Open Application" library="AL">
+<arg>${HOST}</arg>
+<arg>automationName=${AUTOMATION_NAME}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY}</arg>
+<arg>udid=${DEVICE_UDID}</arg>
+<arg>locationServicesEnabled=True</arg>
+<arg>locationServicesAuthorized=True</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20211115 15:44:52.522" endtime="20211115 15:45:07.543"/>
+</kw>
+<status status="PASS" starttime="20211115 15:44:52.516" endtime="20211115 15:45:07.543"/>
+</kw>
+<kw name="Set Location" library="AL">
+<arg>13.736717</arg>
+<arg>100.523186</arg>
+<doc>Set location</doc>
+<status status="PASS" starttime="20211115 15:45:07.543" endtime="20211115 15:45:08.078"/>
+</kw>
+<status status="PASS" starttime="20211115 15:44:52.516" endtime="20211115 15:45:08.078"/>
+</kw>
+<kw name="Click" library="common">
+<arg>${start.noUpdate}</arg>
+<kw name="Wait Until Element Is Visible" library="AL">
+<arg>${locator}</arg>
+<arg>${wait}</arg>
+<arg>${error}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20211115 15:45:08.081" endtime="20211115 15:45:09.454"/>
+</kw>
+<kw name="Click Element" library="AL">
+<arg>${locator}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20211115 15:45:09.466" level="INFO">Clicking element 'id=com.sevenpeaks.major.dev:id/btnNegative'.</msg>
+<status status="PASS" starttime="20211115 15:45:09.454" endtime="20211115 15:45:09.655"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211115 15:45:12.664" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20211115 15:45:09.655" endtime="20211115 15:45:12.664"/>
+</kw>
+<status status="PASS" starttime="20211115 15:45:08.079" endtime="20211115 15:45:12.664"/>
+</kw>
+<kw name="Wait logo" library="util">
+<kw name="Wait Until Page Does Not Contain Element" library="AL">
+<arg>${start.logo}</arg>
+<arg>${medWait}</arg>
+<arg>The loading Image took longer than ${medWait}</arg>
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<status status="PASS" starttime="20211115 15:45:12.664" endtime="20211115 15:45:17.551"/>
+</kw>
+<status status="PASS" starttime="20211115 15:45:12.664" endtime="20211115 15:45:17.551"/>
+</kw>
+<kw name="Click" library="common">
+<arg>${main.frame}</arg>
+<kw name="Wait Until Element Is Visible" library="AL">
+<arg>${locator}</arg>
+<arg>${wait}</arg>
+<arg>${error}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20211115 15:45:17.556" endtime="20211115 15:45:17.705"/>
+</kw>
+<kw name="Click Element" library="AL">
+<arg>${locator}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20211115 15:45:17.714" level="INFO">Clicking element 'id=android:id/content'.</msg>
+<status status="PASS" starttime="20211115 15:45:17.705" endtime="20211115 15:45:17.908"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211115 15:45:20.924" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20211115 15:45:17.910" endtime="20211115 15:45:20.924"/>
+</kw>
+<status status="PASS" starttime="20211115 15:45:17.551" endtime="20211115 15:45:20.925"/>
+</kw>
+<kw name="Menu Bar" library="util">
+<arg>Cinemas</arg>
+<kw name="Convert To Upper Case" library="String">
+<var>${item}</var>
+<arg>${item}</arg>
+<doc>Converts string to upper case.</doc>
+<msg timestamp="20211115 15:45:20.926" level="INFO">${item} = CINEMAS</msg>
+<status status="PASS" starttime="20211115 15:45:20.926" endtime="20211115 15:45:20.926"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${item}' == 'HOME'</arg>
+<arg>Click</arg>
+<arg>${menu.home}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20211115 15:45:20.926" endtime="20211115 15:45:20.926"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${item}' == 'MOVIES'</arg>
+<arg>Click</arg>
+<arg>${menu.movies}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20211115 15:45:20.926" endtime="20211115 15:45:20.926"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${item}' == 'CINEMAS'</arg>
+<arg>Click</arg>
+<arg>${menu.cinemas}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Click" library="common">
+<arg>${menu.cinemas}</arg>
+<kw name="Wait Until Element Is Visible" library="AL">
+<arg>${locator}</arg>
+<arg>${wait}</arg>
+<arg>${error}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20211115 15:45:20.930" endtime="20211115 15:45:21.407"/>
+</kw>
+<kw name="Click Element" library="AL">
+<arg>${locator}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20211115 15:45:21.419" level="INFO">Clicking element 'accessibility_id=Cinemas'.</msg>
+<status status="PASS" starttime="20211115 15:45:21.407" endtime="20211115 15:45:22.040"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211115 15:45:25.057" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20211115 15:45:22.040" endtime="20211115 15:45:25.057"/>
+</kw>
+<status status="PASS" starttime="20211115 15:45:20.926" endtime="20211115 15:45:25.058"/>
+</kw>
+<status status="PASS" starttime="20211115 15:45:20.926" endtime="20211115 15:45:25.058"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${item}' == 'PROMO'</arg>
+<arg>Click</arg>
+<arg>${menu.promo}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20211115 15:45:25.058" endtime="20211115 15:45:25.058"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${item}' == 'MORE'</arg>
+<arg>Click</arg>
+<arg>${menu.more}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20211115 15:45:25.058" endtime="20211115 15:45:25.058"/>
+</kw>
+<status status="PASS" starttime="20211115 15:45:20.925" endtime="20211115 15:45:25.058"/>
+</kw>
+<kw name="Click" library="common">
+<arg>${android.location.allow}</arg>
+<kw name="Wait Until Element Is Visible" library="AL">
+<arg>${locator}</arg>
+<arg>${wait}</arg>
+<arg>${error}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20211115 15:45:25.062" endtime="20211115 15:45:25.210"/>
+</kw>
+<kw name="Click Element" library="AL">
+<arg>${locator}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20211115 15:45:25.218" level="INFO">Clicking element 'id=com.android.permissioncontroller:id/permission_allow_foreground_only_button'.</msg>
+<status status="PASS" starttime="20211115 15:45:25.210" endtime="20211115 15:45:25.406"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211115 15:45:28.425" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20211115 15:45:25.406" endtime="20211115 15:45:28.425"/>
+</kw>
+<status status="PASS" starttime="20211115 15:45:25.058" endtime="20211115 15:45:28.425"/>
+</kw>
+<kw name="Menu Bar" library="util">
+<arg>Home</arg>
+<kw name="Convert To Upper Case" library="String">
+<var>${item}</var>
+<arg>${item}</arg>
+<doc>Converts string to upper case.</doc>
+<msg timestamp="20211115 15:45:28.429" level="INFO">${item} = HOME</msg>
+<status status="PASS" starttime="20211115 15:45:28.429" endtime="20211115 15:45:28.429"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${item}' == 'HOME'</arg>
+<arg>Click</arg>
+<arg>${menu.home}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Click" library="common">
+<arg>${menu.home}</arg>
+<kw name="Wait Until Element Is Visible" library="AL">
+<arg>${locator}</arg>
+<arg>${wait}</arg>
+<arg>${error}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20211115 15:45:28.436" endtime="20211115 15:45:28.698"/>
+</kw>
+<kw name="Click Element" library="AL">
+<arg>${locator}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20211115 15:45:28.705" level="INFO">Clicking element 'accessibility_id=Home'.</msg>
+<status status="PASS" starttime="20211115 15:45:28.698" endtime="20211115 15:45:29.063"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211115 15:45:32.067" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20211115 15:45:29.063" endtime="20211115 15:45:32.067"/>
+</kw>
+<status status="PASS" starttime="20211115 15:45:28.429" endtime="20211115 15:45:32.068"/>
+</kw>
+<status status="PASS" starttime="20211115 15:45:28.429" endtime="20211115 15:45:32.068"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${item}' == 'MOVIES'</arg>
+<arg>Click</arg>
+<arg>${menu.movies}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20211115 15:45:32.068" endtime="20211115 15:45:32.068"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${item}' == 'CINEMAS'</arg>
+<arg>Click</arg>
+<arg>${menu.cinemas}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20211115 15:45:32.068" endtime="20211115 15:45:32.068"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${item}' == 'PROMO'</arg>
+<arg>Click</arg>
+<arg>${menu.promo}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20211115 15:45:32.068" endtime="20211115 15:45:32.068"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${item}' == 'MORE'</arg>
+<arg>Click</arg>
+<arg>${menu.more}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20211115 15:45:32.068" endtime="20211115 15:45:32.075"/>
+</kw>
+<status status="PASS" starttime="20211115 15:45:28.429" endtime="20211115 15:45:32.076"/>
+</kw>
+<status status="PASS" starttime="20211115 15:44:52.515" endtime="20211115 15:45:32.077"/>
+</kw>
+<test id="s1-t1" name="Now Showing Title is Present">
+<kw name="Menu Bar" library="util" type="SETUP">
+<arg>Home</arg>
+<kw name="Convert To Upper Case" library="String">
+<var>${item}</var>
+<arg>${item}</arg>
+<doc>Converts string to upper case.</doc>
+<msg timestamp="20211115 15:45:32.081" level="INFO">${item} = HOME</msg>
+<status status="PASS" starttime="20211115 15:45:32.081" endtime="20211115 15:45:32.081"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${item}' == 'HOME'</arg>
+<arg>Click</arg>
+<arg>${menu.home}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Click" library="common">
+<arg>${menu.home}</arg>
+<kw name="Wait Until Element Is Visible" library="AL">
+<arg>${locator}</arg>
+<arg>${wait}</arg>
+<arg>${error}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20211115 15:45:32.081" endtime="20211115 15:45:32.593"/>
+</kw>
+<kw name="Click Element" library="AL">
+<arg>${locator}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20211115 15:45:32.606" level="INFO">Clicking element 'accessibility_id=Home'.</msg>
+<status status="PASS" starttime="20211115 15:45:32.593" endtime="20211115 15:45:33.619"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211115 15:45:36.633" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20211115 15:45:33.619" endtime="20211115 15:45:36.633"/>
+</kw>
+<status status="PASS" starttime="20211115 15:45:32.081" endtime="20211115 15:45:36.634"/>
+</kw>
+<status status="PASS" starttime="20211115 15:45:32.081" endtime="20211115 15:45:36.634"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${item}' == 'MOVIES'</arg>
+<arg>Click</arg>
+<arg>${menu.movies}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20211115 15:45:36.634" endtime="20211115 15:45:36.637"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${item}' == 'CINEMAS'</arg>
+<arg>Click</arg>
+<arg>${menu.cinemas}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20211115 15:45:36.638" endtime="20211115 15:45:36.638"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${item}' == 'PROMO'</arg>
+<arg>Click</arg>
+<arg>${menu.promo}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20211115 15:45:36.638" endtime="20211115 15:45:36.638"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${item}' == 'MORE'</arg>
+<arg>Click</arg>
+<arg>${menu.more}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20211115 15:45:36.642" endtime="20211115 15:45:36.644"/>
+</kw>
+<status status="PASS" starttime="20211115 15:45:32.080" endtime="20211115 15:45:36.645"/>
+</kw>
+<kw name="Verify Element Text" library="Utility">
+<arg>id=com.sevenpeaks.major.dev:id/tvTitle</arg>
+<arg>home.showingTitle</arg>
+<arg>English</arg>
+<kw name="Get Dictionary Text" library="Utility">
+<var>${text}</var>
+<arg>${key}</arg>
+<arg>${lang}</arg>
+<kw name="Get Dictionary" library="Utility">
+<var>${translation}</var>
+<arg>${key}</arg>
+<arg>${lang}</arg>
+<msg timestamp="20211115 15:45:36.658" level="INFO">${translation} = Now Showing</msg>
+<status status="PASS" starttime="20211115 15:45:36.648" endtime="20211115 15:45:36.658"/>
+</kw>
+<msg timestamp="20211115 15:45:36.662" level="INFO">${text} = Now Showing</msg>
+<status status="PASS" starttime="20211115 15:45:36.648" endtime="20211115 15:45:36.662"/>
+</kw>
+<kw name="Element Should Contain Text" library="AL">
+<arg>${element}</arg>
+<arg>${text}</arg>
+<doc>Verifies element identified by ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20211115 15:45:36.675" level="INFO">Verifying element 'id=com.sevenpeaks.major.dev:id/tvTitle' contains text 'Now Showing'.</msg>
+<status status="PASS" starttime="20211115 15:45:36.662" endtime="20211115 15:45:37.019"/>
+</kw>
+<status status="PASS" starttime="20211115 15:45:36.647" endtime="20211115 15:45:37.019"/>
+</kw>
+<kw name="Cleanup" library="common" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="AL">
+<arg>${TEST NAME}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20211115 15:45:38.844" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Now%20Showing%20Title%20is%20Present.png"&gt;&lt;img src="Now%20Showing%20Title%20is%20Present.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211115 15:45:37.023" endtime="20211115 15:45:38.844"/>
+</kw>
+<status status="PASS" starttime="20211115 15:45:37.022" endtime="20211115 15:45:38.845"/>
+</kw>
+<status status="PASS" starttime="20211115 15:45:32.077" endtime="20211115 15:45:38.867"/>
+</test>
+<kw name="Close App" library="common" type="TEARDOWN">
+<kw name="Close Application" library="AL">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20211115 15:45:38.877" endtime="20211115 15:45:39.861"/>
+</kw>
+<status status="PASS" starttime="20211115 15:45:38.873" endtime="20211115 15:45:39.865"/>
+</kw>
+<doc>Sanity Suite</doc>
+<status status="PASS" starttime="20211115 15:44:49.461" endtime="20211115 15:45:39.865"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Sanity">Sanity</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

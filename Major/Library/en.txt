@@ -1,0 +1,4 @@
+{
+  "home.showingTitle": "Now Showing",
+  "year": 1964
+}
