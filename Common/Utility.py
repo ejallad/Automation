@@ -14,3 +14,8 @@ class Utility(object):
         with open(workingDirectory+"Automation\\"+ proj +"\\Library\\"+ lang +".txt","r") as data:
             dictionary = ast.literal_eval(data.read())
         return(dictionary[key])
+    
+    def combine_strings(self,str1, str2, str3 = "", str4 ="", str5="", str6=""):
+        return(str1+str2+str3+str4+str5+str6)
+
+    

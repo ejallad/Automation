@@ -15,6 +15,8 @@ Launch browser
     [Arguments]    ${url}
     Run Keyword If    '${chromeProfile}'!= '' and '${Browser}'=='Chrome'   Open Browser    ${url}    ${Browser}    options= add_argument("test-type"); add_argument("--js-flags=--expose-gc"); add_argument("--enable-precise-memory-info"); add_argument("--disable-popup-blocking"); add_argument("--disable-default-apps"); add_argument("--enable-automation"); add_argument("disable-extensions"); add_argument("user-data-dir=${chromeProfile}") 
     Run Keyword If    '${chromeProfile}'== '' and '${Browser}'=='Chrome'   Open Browser    ${url}    ${Browser}    options= add_argument("test-type"); add_argument("--js-flags=--expose-gc"); add_argument("--enable-precise-memory-info"); add_argument("--disable-popup-blocking"); add_argument("--disable-default-apps"); add_argument("--enable-automation"); add_argument("disable-extensions");
+    Maximize Browser Window
 
 Cleanup
+    Capture Page Screenshot    ${PREV TEST NAME}.png
     Close Browser
