@@ -9,7 +9,7 @@ Library          OperatingSystem
 *** Variables ***
 
 ## Appium    ##
-${DEVICE_UDID}                04VAX0NV5N
+${DEVICE_UDID}                emulator-5554
 ${HOST}                       http://localhost:4723/wd/hub
 ${OS}                         Android
 
@@ -27,9 +27,13 @@ ${miniWait}     5s
 ${shortWait}    15s
 ${medWait}      30s
 ${longWait}     60s
-
-${android.location.allow}    id=com.android.permissioncontroller:id/permission_allow_foreground_only_button
 ## Test  END  ##
+
+
+## Android  END  ##
+${android.allow}    xpath=//*[contains(@resource-id,'permission_allow')]
+
+## Android  END  ##
 
 
 ## Helpers  ##    
@@ -72,6 +76,7 @@ Allow Location
 Scroll Until Visible
     [Arguments]    ${direction}    ${areaToSwipe}    ${elementToFind}
     Set Local Variable    ${elementFound}    False
+    ${elementFound}=    Run Keyword And Return Status    AL.Element Should Be Visible   ${elementToFind}
     FOR    ${i}    IN RANGE    10
            ${direction}=    Convert To Upper Case    ${direction}
            Run Keyword If    '${direction}' == 'DOWN'    Scroll Down    ${areaToSwipe}

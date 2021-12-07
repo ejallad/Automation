@@ -8,9 +8,8 @@ Test Teardown        Cleanup
 Suite Teardown       Close App 
 
 *** Test Cases ***
-# Singin Button is Present
-#     Scroll Until Visible    Down    ${main.frame}    ${home.signin}
 
 Now Showing Title is Present
-    Verify Element Text    id=com.sevenpeaks.major.dev:id/tvTitle    home.showingTitle    en
+    Scroll Until Visible    Down    ${main.frame}    ${home.signin}
+    Verify Element Text    ${home.nowShowing}   home.showingTitle    en
     

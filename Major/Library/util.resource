@@ -16,6 +16,7 @@ ${spinner}                   class=android.widget.ProgressBar
 
 ##    Home        ##
 ${home.signin}                 id=com.sevenpeaks.major.dev:id/tvLoginSignUp
+${home.nowShowing}             id=com.sevenpeaks.major.dev:id/tvTitle
 ##    Home        ##
 
 ##    Menu        ##
@@ -33,7 +34,7 @@ Initiate App
     Wait logo
     Click        ${main.frame}
     Menu Bar      Cinemas
-    Click        ${android.location.allow}
+    Click        ${android.allow}
     Menu Bar      Home
 
 Menu Bar

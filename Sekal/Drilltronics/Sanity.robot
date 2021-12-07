@@ -1,13 +1,12 @@
 *** Settings ***
-Documentation      Smoke Test 
+Documentation      Drilltronics Sanity suite 
 Resource          ../../Common/Web/common.resource
 Resource          ../Library/drilltronics.resource
-Library          ../Library/Utility.py
 Suite Setup       Launch browser    ${url}
 Suite Teardown    Cleanup   
 
 *** Test Cases ***
-Open Settings
+Change Threshold Settings
     Click Header button    Settings
     Select Threshold type   Trip    Absolute  4
     Close Settings

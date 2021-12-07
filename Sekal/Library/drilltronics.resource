@@ -3,6 +3,7 @@ Documentation     An example resource file
 Library           SeleniumLibrary
 Library           String
 Library          ../../Common/Utility.py
+Library          ./Utility.py
 Resource          ../../Common/Web/common.resource
 
 *** Variables ***
