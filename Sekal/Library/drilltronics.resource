@@ -21,7 +21,8 @@ ${emulateData}      id=emulate-toggle
 *** Keywords ***
 
 Wait Homepage Load
-    Wait Until Element Is Visible    xpath://h6[contains(text(),'Trip Speed')]
+    Wait Until Element Is Visible    xpath://h6[contains(text(),'Trip Speed')]  25
+    Sleep   5   
 
 Expand Header
     Wait Homepage Load
