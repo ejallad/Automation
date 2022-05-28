@@ -7,10 +7,13 @@ Library          ./Utility.py
 Resource          ../../Common/Web/common.resource
 
 *** Variables ***
-${url}              https://sekal-dev-frontend.azurewebsites.net/
+${url}              https://adv.dev.cloudplatform.sekal.com/
+${userEmail}        7PDevTest1@apphuset.com
+${userPass}         Y6Us!Q2oWq
 
 #Main
 ${headerNodge}      xpath://section/header
+${main.btn.signIn}      xpath://span[@class='MuiButton-label' and text()='Sign In']
 
 #Header
 ${emulateData}      id=emulate-toggle
@@ -19,30 +22,38 @@ ${emulateData}      id=emulate-toggle
 
 
 *** Keywords ***
+Launch Drilltronics
+    Launch browser    ${url}
+    Wait Until Element Is Visible   ${main.btn.signIn} 
+    Click   ${main.btn.signIn}
+    ${present}=  If Element Visible  xpath://input[@type='email']
+    Run Keyword If    ${present}    Sign In
+    Wait Homepage Load
+    
+
+Sign In
+    Input Text  xpath://input[@type='email']    ${userEmail}
+    Click   xpath://input[@type='submit']
+    Input Text  xpath://input[@type='password']    ${userPass}
+    Click   xpath://input[@type='submit']
+    Click   xpath://input[@type='submit']
+    Wait Homepage Load
 
 Wait Homepage Load
     Wait Until Element Is Visible    xpath://h6[contains(text(),'Trip Speed')]  25
-    Sleep   5   
+    Sleep   5    
 
 Expand Header
     Wait Homepage Load
     Wait Until Element Is Visible    ${headerNodge}
     Mouse Over  ${headerNodge}
 
-Emulate Data
-    [Arguments]    ${turnOn}
-    Expand Header
-    ${isOn}=    Get Element Attribute   ${emulateData}  checked
-    Run Keyword If    '${isOn}' != 'true' and '${turnOn}' == 'True'    Click Element    ${emulateData}
-    Run Keyword If    '${isOn}' == 'true' and '${turnOn}' == 'False'    Click Element    ${emulateData}
-    ${isOn}=    Get Element Attribute   ${emulateData}  checked
-
 Click Header button
     [Arguments]    ${item}
     Expand Header
     ${item}=    Convert To Upper Case    ${item}
     ${headerButtons}    Get WebElements     xpath://section/header//button 
-    Run Keyword If    '${item}' == 'SETTINGS'    Click Element    ${headerButtons}[1]
+    Run Keyword If    '${item}' == 'SETTINGS'    Click Element    ${headerButtons}[2]
 
 Select Threshold type
     [Arguments]    ${section}   ${type}     ${amount}
